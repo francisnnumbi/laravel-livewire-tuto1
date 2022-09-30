@@ -36,9 +36,11 @@ class Calculator extends Component
             $this->result = $num1 / 100 * $num2;
         }
 
-        $this->alert('success', 'Calculation done successfully !',[
+      /*  $this->alert('success', 'Calculation done successfully !',[
             'position'=>'center'
-        ]);
+        ]);*/
+
+        $this->flash('success', 'Successfully submitted form', [], '/counter');
     }
 
     public function updated($property)
