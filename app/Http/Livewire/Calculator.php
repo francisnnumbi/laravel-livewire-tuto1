@@ -3,9 +3,12 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Calculator extends Component
 {
+    use LivewireAlert;
+
     public $number1 = 0;
     public $number2 = 0;
     public string $action = '+';
@@ -32,6 +35,10 @@ class Calculator extends Component
         } else  if ($this->action === '%') {
             $this->result = $num1 / 100 * $num2;
         }
+
+        $this->alert('success', 'Calculation done successfully !',[
+            'position'=>'center'
+        ]);
     }
 
     public function updated($property)

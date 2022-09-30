@@ -290,7 +290,7 @@
             grid-template-columns: repeat(1, minmax(0, 1fr))
         }
 
-        @media (min-width:640px) {
+        @media (min-width: 640px) {
             .sm\:rounded-lg {
                 border-radius: .5rem
             }
@@ -337,7 +337,7 @@
             }
         }
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             .md\:border-t-0 {
                 border-top-width: 0
             }
@@ -351,14 +351,14 @@
             }
         }
 
-        @media (min-width:1024px) {
+        @media (min-width: 1024px) {
             .lg\:px-8 {
                 padding-left: 2rem;
                 padding-right: 2rem
             }
         }
 
-        @media (prefers-color-scheme:dark) {
+        @media (prefers-color-scheme: dark) {
             .dark\:bg-gray-800 {
                 --bg-opacity: 1;
                 background-color: #2d3748;
@@ -403,21 +403,34 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+
 </head>
 
 <body class="antialiased">
-    <nav class="flex bg-slate-700 text-white">
-        <a href="/counter" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('counter'))?'bg-slate-800':'' }}">Counter</a>
-        <a href="/calculator" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('calculator'))?'bg-slate-800':'' }}">Calculator</a>
-        <a href="/todo-list" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('todo-list'))?'bg-slate-800':'' }}">Todo List</a>
-        <a href="/cascading-dropdown" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('cascading-dropdown'))?'bg-slate-800':'' }}">Cascading Dropdown</a>
-        <a href="/products" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('products'))?'bg-slate-800':'' }}">Products</a>
-        <a href="/image-upload" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('image-upload'))?'bg-slate-800':'' }}">Image Upload</a>
-        <a href="/register" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('register'))?'bg-slate-800':'' }}">Register</a>
-    </nav>
-    {{ $slot }}
+<nav class="flex bg-slate-700 text-white">
+    <a href="/counter" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('counter'))?'bg-slate-800':'' }}">Counter</a>
+    <a href="/calculator"
+       class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('calculator'))?'bg-slate-800':'' }}">Calculator</a>
+    <a href="/todo-list" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('todo-list'))?'bg-slate-800':'' }}">Todo
+        List</a>
+    <a href="/cascading-dropdown"
+       class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('cascading-dropdown'))?'bg-slate-800':'' }}">Cascading
+        Dropdown</a>
+    <a href="/products" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('products'))?'bg-slate-800':'' }}">Products</a>
+    <a href="/image-upload"
+       class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('image-upload'))?'bg-slate-800':'' }}">Image
+        Upload</a>
+    <a href="/register" class="py-4 px-6 hover:bg-slate-800 {{ (request()->routeIs('register'))?'bg-slate-800':'' }}">Register</a>
+</nav>
+{{ $slot }}
 
-    @livewireScripts
+@livewireScripts
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<x-livewire-alert::scripts/>
+<x-livewire-alert::flash/>
+
+
 </body>
 
 </html>
