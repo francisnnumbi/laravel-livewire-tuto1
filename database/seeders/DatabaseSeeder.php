@@ -6,6 +6,8 @@ namespace Database\Seeders;
 
 use App\Models\Continent;
 use App\Models\Country;
+use App\Models\Product;
+use Database\Factories\ProductFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,11 +28,12 @@ class DatabaseSeeder extends Seeder
         ];
         foreach($continents as $continent){
             Continent::factory()->create($continent)
-            ->each(function($c){
-                $c->countries()->saveMany(Country::factory(10)->make());
-            })
+            ->each(fn($c) => $c->countries()->saveMany(Country::factory(10)->make()))
             ;
         }
+
+        Product::factory(100)->create();
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
