@@ -22,7 +22,7 @@ class ProductSearch extends Component
                 ->orWhere('description', 'like', "%{$this->search}%");
         }
         return view('livewire.product-search',[
-            'products'=>$query->paginate(20),
+            'products'=>$query->paginate(5),
         ]);
     }
 

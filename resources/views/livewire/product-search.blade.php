@@ -3,13 +3,13 @@
         <input type="text" wire:model.lazy="search" placeholder="Search for Products">
     </div>
 
-        <table class="table-auto w-full">
+        <table class="table-auto w-full mb-2">
             <thead>
             <tr>
                 <th class="py-2 px-3 bg-gray-100 border-b-2 text-left">ID</th>
                 <th class="py-2 px-3 bg-gray-100 border-b-2 text-left">Image</th>
                 <th class="py-2 px-3 bg-gray-100 border-b-2 text-left">Title</th>
-                <th class="py-2 px-3 bg-gray-100 border-b-2 text-left">Price</th>
+                <th class="py-2 px-3 bg-gray-100 border-b-2 text-right">Price</th>
             </tr>
             </thead>
             <tbody>
@@ -18,7 +18,7 @@
                     <td class="py-2 px-3 border-b">{{$product->id}}</td>
                     <td class="py-2 px-3 border-b"><img class="w-16" src="{{$product->image}}"></td>
                     <td class="py-2 px-3 border-b">{{$product->title}}</td>
-                    <td class="py-2 px-3 border-b">{{$product->price}}</td>
+                    <td class="py-2 px-3 border-b text-right">{{$product->price}} Fc</td>
                 </tr>
             @endforeach
             </tbody>
