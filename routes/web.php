@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Calculator;
 use App\Http\Livewire\CascadingDropdown;
+use App\Http\Livewire\Home;
 use App\Http\Livewire\TodoList;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', Home::class);
+Route::get('/home', Home::class)->name('home');
 Route::get('/counter', function () {
     return view('welcome');
 })->name('counter');
