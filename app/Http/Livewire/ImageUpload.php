@@ -14,11 +14,14 @@ class ImageUpload extends Component
      * @var \Livewire\TemporaryUploadedFile
      * */
     public $photo = [];
+    public $koko;
 
     public function save(){
+
         $this->validate([
-            'photo.*'=>'image|max:1024', // 1MB Max
+            'photo.*' => 'image|max:1024', // 1MB Max
         ]);
+
 
         foreach ($this->photo as $im){
             $im->store('public');// the image will be stored with temporary name
