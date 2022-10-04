@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Calculator;
 use App\Http\Livewire\CascadingDropdown;
+use App\Http\Livewire\HelloWorld;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\ImageUpload;
 use App\Http\Livewire\ProductSearch;
@@ -25,6 +26,7 @@ Route::get('/counter', function () {
 })->name('counter');
 
 Route::get('/calculator', Calculator::class)->name('calculator');
+Route::get('/hello-world', HelloWorld::class)->name('hello-world');
 Route::get('/todo-list', TodoList::class)->name('todo-list');
 Route::get('/cascading-dropdown', CascadingDropdown::class)->name('cascading-dropdown');
 Route::get('/products', ProductSearch::class)->name('products');

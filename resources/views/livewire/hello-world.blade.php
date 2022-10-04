@@ -1,9 +1,12 @@
-<div class="bg-green-700">
+<div class="p-16 flex justify-center gap-6 items-center">
+    <div class="justify-center  items-center">
    <h2>Hello World</h2>
-    <button class="py-2 px-4
-             bg-red-500 hover:bg-red-600
-             disabled:cursor-not-allowed
-            disabled:bg-opacity-90
-            rounded
-             text-white"  wire:click="$emit('closeModal')">No, do not delete</button>
+   <h2>You have counted {{$count}} times</h2>
+        <div class="flex">
+            <livewire:click-button :emit-signature="'decrement'" :button-color="'red'" :button-text="'-'"  />
+            <livewire:click-button :emit-signature="'increment'" :button-color="'green'" :button-text="'+'" />
+
+        </div>
+
+    </div>
 </div>
