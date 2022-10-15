@@ -7,7 +7,7 @@ use Livewire\Component;
 class ClickButton extends Component
 {
 
-    public $buttonColor= 'white';
+    public $buttonColor= 'blue';
     public $buttonText='';
     public $emitSignature = '';
     public function render()
@@ -16,7 +16,7 @@ class ClickButton extends Component
     }
 
     public function clickMe(){
-        $this->emit($this->emitSignature);
+        $this->emitUp($this->emitSignature);
     }
 
 }

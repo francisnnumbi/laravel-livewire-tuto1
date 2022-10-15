@@ -399,6 +399,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Alpine v3 -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Focus plugin -->
+<script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
     <style>
         body {
@@ -428,8 +430,9 @@
 </nav>
 {{ $slot }}
 
-@livewireScripts
 @livewire('livewire-ui-modal')
+@livewireScripts
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <x-livewire-alert::scripts/>
 <x-livewire-alert::flash/>
